@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Conversor de Divisas</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">Conversor de Divisas</div>
+		<div class="list">
+			<select id="entry" class="border">
+				<option value="none">None</option>
+				<option value="usd">Dolar</option>
+				<option value="euro">Euro</option>
+				<option value="mn">Peso Cubano</option>
+				<option value="pound">Libra Esterlina</option>
+			</select>
+			<select id="result" class="border">
+				<option value="none">None</option>
+				<option value="usd">Dolar</option>
+				<option value="euro">Euro</option>
+				<option value="mn">Peso Cubano</option>
+				<option value="pound">Libra Esterlina</option>
+			</select>
+		</div>
+		<div class="footer">
+			<input type="text" placeholder="cantidad" id="cant" class="border">
+			<input type="button" value="Convertir" class="border" onclick="Convert()">
+			<input type="text"  id="rest" class="border">
+		</div>
+	</div>
+</body>
+</html>
