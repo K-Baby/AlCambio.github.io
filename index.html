@@ -1,34 +1,61 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<title>Conversor de Divisas</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="script.js"></script>
+<html>
+<head lang="es">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Piedra Papel Tijeras</title>
+	<link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
+<section class="home">
+	<div class="header">
+		<h1>Piedra Papel Tijeras</h1>
+	</div>
+	<regla class="foot center"><h2>El primero en obtener un puntaje de 10 es el Ganador</h2></regla>
 	<div class="container">
-		<div class="header">Conversor de Divisas</div>
-		<div class="list">
-			<select id="entry" class="border">
-				<option value="none">None</option>
-				<option value="usd">Dolar</option>
-				<option value="euro">Euro</option>
-				<option value="mn">Peso Cubano</option>
-				<option value="pound">Libra Esterlina</option>
-			</select>
-			<select id="result" class="border">
-				<option value="none">None</option>
-				<option value="usd">Dolar</option>
-				<option value="euro">Euro</option>
-				<option value="mn">Peso Cubano</option>
-				<option value="pound">Libra Esterlina</option>
-			</select>
+		<div class="pc">
+			<input type="text" class="roundborder" readonly id="elecpc">
+			<img class="chikiton" src="images/game.jpg" alt="img pc">
 		</div>
-		<div class="footer">
-			<input type="text" placeholder="cantidad" id="cant" class="border">
-			<input type="button" value="Convertir" class="border" onclick="Convert()">
-			<input type="text"  id="rest" class="border">
+		<div class="player horizontal">
+			<div class="rock">
+				<img onclick="Piedra()" class="chikito" src="images/piedra.jpg" value="Piedra" id="elec1">
+				<!--<input type="button" value="Piedra" readonly id="elec1" onclick="Piedra()">-->
+			</div>
+			<div class="paper">
+				<img class="chikito" src="images/papel.jpg" value="Papel" id="elec2" onclick="Papel()">
+				<!--<input type="button" value="Papel" readonly id="elec2" onclick="Papel()">-->
+			</div>
+			<div class="scissor">
+				<img class="chikito" src="images/tijeras.jpg" value="Tijeras"  id="elec3" onclick="Tijera()"">
+			</div>
 		</div>
 	</div>
+	<div class="contador center">
+		<input type="text" readonly id="result" class='roundborder'>
+	</div>
+	<div class="puntaje center">
+		<div>
+			<h2>Jugador</h2>
+			<input class="point roundborder" type="text" id="punt1" readonly>
+		</div>
+		<div>
+			<h2>Computador</h2>
+			<input class="point roundborder" type="text" id="punt2" readonly>
+		</div>	
+	</div>
+	<div class="last center">
+		<h3>Ultimos Resultados :</h3>
+		<div id="lastRes"></div>
+	</div>
+	<footer class="xd center">
+		<input class='roundborder buton' type="button" value="Refresh" onclick="location.reload()">
+	</footer>
+</section>
+	<div id="musicote">
+		<span id="play">Play Music</span>
+		<span id="stop">Stop Music</span>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
