@@ -1,59 +1,132 @@
-//Conversion
-function Convert() {
-	var entrada = document.getElementById('entry').value;
-	var salida = document.getElementById('result').value;
-	var cantidad = Number(document.getElementById('cant').value);
-	if (entrada === "none" || salida === "none") {
-		window.alert("Elija las unidades de conversion");
-	} else if (cantidad == 0){
-		window.alert("Elija la cantidad");
-	} else if (entrada == "usd" && salida == "usd") {
-		var cons = cantidad;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "usd" && salida == "euro") {
-		var cons = cantidad*1.01;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "usd" && salida == "mn") {
-		var cons = cantidad*140;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "usd" && salida == "pound") {
-		var cons = cantidad*0.85;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "euro" && salida == "usd") {
-		var cons = cantidad*0.99;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "euro" && salida == "euro") {
-		var cons = cantidad;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "euro" && salida == "mn") {
-		var cons = cantidad*140;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "euro" && salida == "pound") {
-		var cons = cantidad*0.84;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "mn" && salida == "usd") {
-		var cons = cantidad*0.00715;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "mn" && salida == "euro") {
-		var cons = cantidad*0.00715;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "mn" && salida == "mn") {
-		var cons = cantidad;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "mn" && salida == "pound") {
-		var cons = cantidad*0.00645;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "pound" && salida == "usd") {
-		var cons = cantidad*1.18;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "pound" && salida == "euro") {
-		var cons = cantidad*1.18;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "pound" && salida == "mn") {
-		var cons = cantidad*155;
-		document.getElementById('rest').value = cons;
-	} else if (entrada == "pound" && salida == "pound") {
-		var cons = cantidad;
-		document.getElementById('rest').value = cons;
+function points() {
+	let wl = document.getElementById('result').value;
+	let person = document.getElementById('punt1').value;
+	let comput = document.getElementById('punt2').value;
+	if (wl == 'Win') {
+		person++;
+		document.getElementById('punt1').value = person;
+		moves();
+	} else if (wl == 'Loss') {
+		comput++;
+		document.getElementById('punt2').value = comput;
+		moves();
+	} 	
+}
+
+function moves() {
+	let cant1 = document.getElementById('punt1').value;
+	let cant2 = document.getElementById('punt2').value;
+	if (cant1 == 10 ) {
+		window.alert('Has Ganado');
+		let div = document.createElement('div');
+		div.innerHTML = 'Jugador ' + cant1 + ' vs Computador ' + cant2;
+		document.getElementById('lastRes').appendChild(div);
+		cant1 = 0;
+		document.getElementById('punt1').value = cant1;
+		cant2 = 0;
+		document.getElementById('punt2').value = cant2;
+	} else if (cant2 == 10) {
+		window.alert('Has Perdido');
+		let div = document.createElement('div');
+		div.innerHTML = 'Jugador ' + cant1 + ' vs Computador ' + cant2;
+		document.getElementById('lastRes').appendChild(div);
+		/*document.getElementById('lastRes').innerHTML = 'Jugador ' + cant1 + ' vs Computador ' + cant2;*/
+		cant2 = 0;
+		document.getElementById('punt2').value = cant2;
+		cant1 = 0;
+		document.getElementById('punt1').value = cant1;
 	}
+}
+
+function Piedra() {
+	let rock = document.getElementById('elec1').value;
+	let wl = document.getElementById('result').value;
+	let elecpc = document.getElementById('elecpc').value;
+	let random = Math.round(Math.random()*100);
+	if (random <= 33) {
+		elecpc = 'Piedra';
+		wl = 'Draw';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	} else if (random > 33 && random <=67) {
+		elecpc = 'Papel';
+		wl = 'Loss';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	} else if (random >67) {
+		elecpc = 'Tijeras';
+		wl = 'Win';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	}
+}
+
+function Papel() {
+	let rock = document.getElementById('elec1').value;
+	let wl = document.getElementById('result').value;
+	let elecpc = document.getElementById('elecpc').value;
+	let random = Math.round(Math.random()*100);
+	if (random <= 33) {
+		elecpc = 'Piedra';
+		wl = 'Win';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	} else if (random > 33 && random <=67) {
+		elecpc = 'Papel';
+		wl = 'Draw';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+	} else if (random >67) {
+		elecpc = 'Tijeras';
+		wl = 'Loss';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	}
+}
+
+function Tijera() {
+	let rock = document.getElementById('elec1').value;
+	let wl = document.getElementById('result').value;
+	let elecpc = document.getElementById('elecpc').value;
+	let random = Math.round(Math.random()*100);
+	if (random <= 33) {
+		elecpc = 'Piedra';
+		wl = 'Loss';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	} else if (random > 33 && random <=67) {
+		elecpc = 'Papel';
+		wl = 'Win';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+		points();
+	} else if (random >67) {
+		elecpc = 'Tijeras';
+		wl = 'Draw';
+		document.getElementById('elecpc').value = elecpc;
+		document.getElementById('result').value = wl;
+	}
+}
+window.addEventListener("load",function(){ 
+document.getElementById("play").addEventListener("click",sonarPajaros); 
+document.getElementById("stop").addEventListener("click",callarPajaros);
+	}); 
+function sonarPajaros(){ 
+var sonido = document.createElement("iframe"); 
+sonido.setAttribute("src","audio/Heat Waves.mp3"); 
+document.body.appendChild(sonido); 
+document.getElementById("play").removeEventListener("click",sonarPajaros); 
+	} 
+function callarPajaros(){ 
+var iframe = document.getElementsByTagName("iframe"); 
+if (iframe.length > 0){ 
+	iframe[0].parentNode.removeChild(iframe[0]); 
+document.getElementById("play").addEventListener("click",sonarPajaros); 
+	} 
 }
