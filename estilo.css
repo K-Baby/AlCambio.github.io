@@ -1,0 +1,93 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.container {
+	margin: auto;
+	text-align: center;
+}
+.header {
+	padding: 10px;
+	background-color: #ccc;
+	display: flex;
+	align-items: center;
+	max-width: 350px;
+	width: 100%;
+	justify-content: center;	
+	margin: auto;
+	border-radius: 25px;
+	border: 2px solid black;
+}
+.chikiton {
+	width: 150px;
+}
+.chikito {
+	width: 100px;
+	height: 100px;
+	margin: 0px 10px;
+}
+.horizontal {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 50px;
+}
+body {
+	display: flex;
+	flex-flow: column wrap;
+	background-color: #e7e7e7;
+}
+.center {
+	text-align:	center;	
+}
+.puntaje {
+	display: flex;	
+	justify-content: center;
+	margin: 15px 20px;
+}		
+.point {
+	width: 75px;
+}
+.xd {
+	margin-top: 20px;
+}
+.last {
+	margin-top: 15px;
+}
+.roundborder {
+	border-radius: 25px;
+	text-align: center;
+}
+.buton {
+	padding: 5px;
+	background-color: #ccc;
+}
+.buton:hover {
+	transform: scale(.9);
+	border: 4px solid black;
+}
+.chikito:hover {
+	transform: scale(.9);
+}
+.home {
+	border:5px solid black;
+	padding-bottom: 30px;
+}
+#play,#stop {
+	display: inline-block;
+	padding: 16px;
+	border: 1px solid #000;
+	border-radius: 5px;
+}
+#musicote {
+	display: flex;
+	justify-content: center;
+}
+#play:hover{
+	transform: scale(.9);
+	background-color: #ccc; 
+}
+#stop:hover{
+	transform: scale(.9);
+	background-color: #ccc; 
+}
